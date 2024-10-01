@@ -1,14 +1,20 @@
-async function user() {
+document.getElementById('btn-search').addEventListener('click', () => {
+    const userName = document.getElementById('input-search').value
 
-    const response = await fetch('https://api.github.com/users/chrysthy')
+    getUserProfile(userName)
+})
+
+async function user(userName) {
+
+    const response = await fetch(`https://api.github.com/users/${userName}`)
 
     return await response.json()
 
 }
 
-function getUserProfile() {
+function getUserProfile(userName) {
 
-    user().then(userData => {
+    user(userName).then(userData => {
 
         console.log(userData);
 
@@ -32,9 +38,6 @@ function getUserProfile() {
     })
 
 }
-
-
-getUserProfile()
 
 
 
