@@ -6,5 +6,19 @@ async function user() {
 
 }
 
+function getUserProfile() {
+    
+    user().then(userData => {
+
+        console.log(userData);
+        
+
+    })  
+
+}
+
+
+getUserProfile()
+
 
 
