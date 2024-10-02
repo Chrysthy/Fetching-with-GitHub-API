@@ -4,6 +4,16 @@ document.getElementById('btn-search').addEventListener('click', () => {
     getUserProfile(userName)
 })
 
+document.getElementById('input-search').addEventListener('keyup', (e) => {
+    const userName = e.target.value
+    const key = e.which || e.keyCode
+    const isEnterKeyPressed = key === 13
+
+    if (isEnterKeyPressed) {
+        getUserProfile(userName)
+    }
+})
+
 async function user(userName) {
 
     const response = await fetch(`https://api.github.com/users/${userName}`)
