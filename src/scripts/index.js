@@ -34,11 +34,6 @@ async function repos(userName) {
 
 function getUserProfile(userName) {
 
-    repos(userName).then(reposData => {
-        console.log(reposData);
-        
-    })
-
     user(userName).then(userData => {
 
         console.log(userData);
@@ -64,5 +59,29 @@ function getUserProfile(userName) {
 
 }
 
+function getUserRepositories(userName) {
+
+    repos(userName).then(reposData => {
+
+        let repositoriesItens = ""
+
+        reposData.forEach(repo => {
+
+            repositoriesItens += `
+            
+            <li>
+            
+            <a href="${repo.html_url}"> ${repo.name}</a> 
+            
+            </li>
+            
+            `
+        });
+
+        console.log(repositoriesItens);
 
 
+    })
+}
+
+getUserRepositories('chrysthy')
