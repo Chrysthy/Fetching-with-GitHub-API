@@ -1,9 +1,11 @@
+//*buscando clicando no botão
 document.getElementById('btn-search').addEventListener('click', () => {
     const userName = document.getElementById('input-search').value
 
     getUserProfile(userName)
 })
 
+//*buscando com a tecla enter
 document.getElementById('input-search').addEventListener('keyup', (e) => {
     const userName = e.target.value
     const key = e.which || e.keyCode
@@ -22,7 +24,20 @@ async function user(userName) {
 
 }
 
+async function repos(userName) {
+
+    const response = await fetch(`https://api.github.com/users/${userName}/repos`)
+
+    return await response.json()
+
+}
+
 function getUserProfile(userName) {
+
+    repos(userName).then(reposData => {
+        console.log(reposData);
+        
+    })
 
     user(userName).then(userData => {
 
