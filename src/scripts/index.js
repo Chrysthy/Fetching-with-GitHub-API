@@ -41,13 +41,16 @@ function getUserProfile(userName) {
 
         let userInfo = `
         
-        <img src="${userData.avatar_url}" alt="Foto do Perfil">
+        <div class="info">
+            <img src="${userData.avatar_url}" alt="Foto do Perfil">
 
-        <div class="data">
+            <div class="data">
         
-            <h1>${userData.name ?? 'Não possui nome cadastrado 😓'}</h1>
+                <h1>${userData.name ?? 'Não possui nome cadastrado 😓'}</h1>
 
-            <p>${userData.bio ?? 'Não possui bio cadastrada 😓'}</p>
+                <p>${userData.bio ?? 'Não possui bio cadastrada 😓'}</p>
+
+            </div>
 
         </div>
         
@@ -55,6 +58,7 @@ function getUserProfile(userName) {
 
         document.querySelector('.profile-data').innerHTML = userInfo
 
+        getUserRepositories(userName)
     })
 
 }
@@ -71,17 +75,29 @@ function getUserRepositories(userName) {
             
             <li>
             
-            <a href="${repo.html_url}"> ${repo.name}</a> 
+            <a href="${repo.html_url}" target="_blank"> ${repo.name}</a> 
             
             </li>
             
             `
         });
 
-        console.log(repositoriesItens);
+        document.querySelector('.profile-data').innerHTML += `
+        
+        <div class="repositories section">
 
+            <h2>Repositories</h2>
 
+            <ul>
+            
+                <li>${repositoriesItens}</li>
+            
+            
+            </ul>
+
+        </div>
+
+        `
     })
 }
 
-getUserRepositories('chrysthy')
