@@ -1,6 +1,8 @@
 import { user } from "/src/scripts/services/user.js"
 import { repositories } from "/src/scripts/services/repositories.js"
 
+import { user } from "/src/scripts/objects/user.js"
+
 //*buscando clicando no botão
 document.getElementById('btn-search').addEventListener('click', () => {
     const userName = document.getElementById('input-search').value
