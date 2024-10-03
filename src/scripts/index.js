@@ -2,6 +2,7 @@ import { getUser } from "/src/scripts/services/user.js"
 import { getRepositories } from "/src/scripts/services/repositories.js"
 
 import { user } from "/src/scripts/objects/user.js"
+import { screen } from "/src/scripts/objects/screen.js"
 
 //*buscando clicando no botão
 document.getElementById('btn-search').addEventListener('click', () => {
@@ -25,10 +26,12 @@ document.getElementById('input-search').addEventListener('keyup', (e) => {
 async function getUserProfile(userName) {
 
     const userResponse = await getUser(userName)
-    
+
     user.setInfo(userResponse)
-    
-    user.repositories(repositories)
+
+    // user.repositories(repositories)
+
+    screen.renderUser(user)
 
 
     // getUser(userName).then(userData => {
@@ -37,12 +40,12 @@ async function getUserProfile(userName) {
 
 
     //     let userInfo = `
-        
+
     //     <div class="info">
     //         <img src="${userData.avatar_url}" alt="Foto do Perfil">
 
     //         <div class="data">
-        
+
     //             <h1>${userData.name ?? 'Não possui nome cadastrado 😓'}</h1>
 
     //             <p>${userData.bio ?? 'Não possui bio cadastrada 😓'}</p>
@@ -50,7 +53,7 @@ async function getUserProfile(userName) {
     //         </div>
 
     //     </div>
-        
+
     //     `
 
     //     document.querySelector('.profile-data').innerHTML = userInfo
