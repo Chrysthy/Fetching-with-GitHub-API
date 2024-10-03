@@ -7,9 +7,6 @@ const user = {
 
     repositories: [],
 
-
-}
-
     //*criando o método
     setInfo(gitHubUser) {
 
@@ -19,4 +16,9 @@ const user = {
         this.username = gitHubUser.loging
     },
 
-  
+    setRepositories(repositories) {
+
+    }
+
+}
+
