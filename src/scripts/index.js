@@ -8,7 +8,7 @@ import { screen } from "/src/scripts/objects/screen.js"
 document.getElementById('btn-search').addEventListener('click', () => {
     const userName = document.getElementById('input-search').value
 
-    getUserProfile(userName)
+    getUserData(userName)
 })
 
 //*buscando com a tecla enter
@@ -18,18 +18,18 @@ document.getElementById('input-search').addEventListener('keyup', (e) => {
     const isEnterKeyPressed = key === 13
 
     if (isEnterKeyPressed) {
-        getUserProfile(userName)
+        getUserData(userName)
     }
 })
 
 
-async function getUserProfile(userName) {
+async function getUserData(userName) {
 
     const userResponse = await getUser(userName)
+    const repositoriesResponse = await getRepositories(userName)
 
     user.setInfo(userResponse)
-
-    // user.repositories(repositories)
+    user.setRepositories(repositoriesResponse)
 
     screen.renderUser(user)
 
@@ -63,41 +63,41 @@ async function getUserProfile(userName) {
 
 }
 
-function getUserRepositories(userName) {
+// function getUserRepositories(userName) {
 
-    getRepositories(userName).then(reposData => {
+//     getRepositories(userName).then(reposData => {
 
-        let repositoriesItens = ""
+//         let repositoriesItens = ""
 
-        reposData.forEach(repo => {
+//         reposData.forEach(repo => {
 
-            repositoriesItens += `
+//             repositoriesItens += `
             
-            <li>
+//             <li>
             
-            <a href="${repo.html_url}" target="_blank"> ${repo.name}</a> 
+//             <a href="${repo.html_url}" target="_blank"> ${repo.name}</a> 
             
-            </li>
+//             </li>
             
-            `
-        });
+//             `
+//         });
 
-        document.querySelector('.profile-data').innerHTML += `
+//         document.querySelector('.profile-data').innerHTML += `
         
-        <div class="repositories section">
+//         <div class="repositories section">
 
-            <h2>Repositories</h2>
+//             <h2>Repositories</h2>
 
-            <ul>
+//             <ul>
             
-                <li>${repositoriesItens}</li>
+//                 <li>${repositoriesItens}</li>
             
             
-            </ul>
+//             </ul>
 
-        </div>
+//         </div>
 
-        `
-    })
-}
+//         `
+//     })
+// }
 
