@@ -1,5 +1,5 @@
-import { user } from "/src/scripts/services/user.js"
-import { repositories } from "/src/scripts/services/repositories.js"
+import { getUser } from "/src/scripts/services/user.js"
+import { getRepositories } from "/src/scripts/services/repositories.js"
 
 import { user } from "/src/scripts/objects/user.js"
 
@@ -24,7 +24,7 @@ document.getElementById('input-search').addEventListener('keyup', (e) => {
 
 function getUserProfile(userName) {
 
-    user(userName).then(userData => {
+    getUser(userName).then(userData => {
 
         console.log(userData);
 
@@ -55,7 +55,7 @@ function getUserProfile(userName) {
 
 function getUserRepositories(userName) {
 
-    repositories(userName).then(reposData => {
+    getRepositories(userName).then(reposData => {
 
         let repositoriesItens = ""
 
