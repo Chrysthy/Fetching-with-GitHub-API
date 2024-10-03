@@ -1,6 +1,6 @@
 import { baseUrl, repositoriesQuantity } from "/src/scripts/variables.js"
 
-async function repositories(userName) {
+async function getRepositories(userName) {
 
     const response = await fetch(`${baseUrl}/${userName}/repos?per_page=${repositoriesQuantity}`)
 
@@ -8,4 +8,4 @@ async function repositories(userName) {
 
 }
 
-export { repositories }
+export { getRepositories }
