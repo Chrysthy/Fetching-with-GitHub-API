@@ -1,4 +1,5 @@
-import { baseUrl, repositoriesQuantity } from "./variables.js"
+import { user } from "/src/scripts/services/user.js"
+import { repositories } from "/src/scripts/services/repositories.js"
 
 //*buscando clicando no botão
 document.getElementById('btn-search').addEventListener('click', () => {
@@ -52,7 +53,7 @@ function getUserProfile(userName) {
 
 function getUserRepositories(userName) {
 
-    repos(userName).then(reposData => {
+    repositories(userName).then(reposData => {
 
         let repositoriesItens = ""
 
