@@ -18,6 +18,18 @@ document.getElementById('btn-search').addEventListener('click', () => {
     getUserData(userName)
 })
 
+function validateInput(userName) {
+    
+    if (userName.length === 0) {
+        
+        alert('Preencha o campo com o nome do usuário do GitHub')
+
+        return
+    }    
+
+}
+
+
 //*buscando com a tecla enter
 document.getElementById('input-search').addEventListener('keyup', (e) => {
     const userName = e.target.value
