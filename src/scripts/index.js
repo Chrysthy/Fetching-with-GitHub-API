@@ -25,6 +25,14 @@ document.getElementById('input-search').addEventListener('keyup', (e) => {
     const isEnterKeyPressed = key === 13
 
     if (isEnterKeyPressed) {
+        
+        if (userName.length === 0) {
+        
+            alert('Preencha o campo com o nome do usuário do GitHub')
+    
+            return
+        }
+
         getUserData(userName)
     }
 })
