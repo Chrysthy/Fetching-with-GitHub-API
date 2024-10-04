@@ -8,22 +8,10 @@ import { screen } from "/src/scripts/objects/screen.js"
 document.getElementById('btn-search').addEventListener('click', () => {
     const userName = document.getElementById('input-search').value
 
-    validateInput(userName)
+    if (validateEmptyInput(userName)) return
 
     getUserData(userName)
 })
-
-function validateInput(userName) {
-    
-    if (userName.length === 0) {
-        
-        alert('Preencha o campo com o nome do usuário do GitHub')
-
-        return
-    }    
-
-}
-
 
 //*buscando com a tecla enter
 document.getElementById('input-search').addEventListener('keyup', (e) => {
@@ -33,12 +21,22 @@ document.getElementById('input-search').addEventListener('keyup', (e) => {
 
     if (isEnterKeyPressed) {
     
-        validateInput(userName)
+        if(validateEmptyInput(userName)) return
     
         getUserData(userName)
     }
 })
 
+function validateEmptyInput(userName) {
+    
+    if (userName.length === 0) {
+        
+        alert('Preencha o campo com o nome do usuário do GitHub')
+
+        return true
+    }    
+
+}
 
 async function getUserData(userName) {
 
