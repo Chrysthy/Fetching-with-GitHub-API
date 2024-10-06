@@ -31,3 +31,20 @@
 
 <br>
 
+## ✨ Features
+
+- [X] Search profile from GiHub
+- [X] Search repositories from GitHub
+- [X] API
+
+
+<br>
+
+## 💻 Project
+
+- The website was created to practice JavaScript, Node, JSON and API skills.
+
+<br>
+
+
+
