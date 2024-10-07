@@ -34,7 +34,7 @@ const screen = {
             
             `)
 
-        if (user.repositories.length > 0) {
+            if (user.repositories.length > 0) {
 
             this.userProfile.innerHTML += `
             
