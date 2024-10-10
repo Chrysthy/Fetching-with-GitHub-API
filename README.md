@@ -14,7 +14,7 @@
 </p>
 
 <p align="center">
-  <img alt="Imagem do Projeto" src=".github/foto-do-projeto" width="80%">
+  <img src=".github/foto-do-projeto.png" alt="Imagem do Projeto"  width="80%">
 </p>
 
 <br>
