@@ -25,11 +25,11 @@
 
 - HTML
 - CSS
-- JavaScript;
-- Node;
-- JSON;
+- JavaScript
+- Node
+- JSON
 - API
-- Git e GitHub.
+- Git e GitHub
 
 <br>
 
