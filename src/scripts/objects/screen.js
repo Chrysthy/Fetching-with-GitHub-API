@@ -20,11 +20,11 @@ const screen = {
 
                 <div class="follow">
 
-                    <p>Followers: ${user.followers}</p>
+                    <p>👥 Followers: ${user.followers}</p>
                 
                     <br>
                    
-                    <p>Following: ${user.following}</p>
+                    <p>👣 Following: ${user.following}</p>
                 
                 </div>
 
