@@ -42,6 +42,15 @@ const screen = {
             
             <a href="${repo.html_url}" target="_blank"> ${repo.name} </a>
 
+            <div class="container">
+
+                <p>🍴 ${repo.forks}</p>                   
+                <p>🌟 ${repo.stargazers_count}</p>
+                <p>👀 ${repo.watchers}</p>
+                <p>💻 ${repo.language}</p>
+                
+            </div>
+            
             </li>
             
             `)
@@ -52,7 +61,7 @@ const screen = {
             
             <div class="repositories section">
 
-                <h2>Repositories</h2>
+                <h2>Repositories</h2>               
 
                 <ul> ${repositoriesItens} </ul>
 
