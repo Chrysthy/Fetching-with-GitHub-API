@@ -72,7 +72,7 @@ const screen = {
             </li>
             
         `)
-        
+
         let pushEvents = ""
         user.events.forEach(evnt => pushEvents += `
             
