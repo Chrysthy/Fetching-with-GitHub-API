@@ -18,11 +18,15 @@ const screen = {
 
                 <br>
 
-                <h3>Followers</h3>
-                <p>${user.followers}</p>
+                <div class="follow">
 
-                <h3>Following</h3>
-                <p>${user.following}</p>
+                    <p>Followers: ${user.followers}</p>
+                
+                    <br>
+                   
+                    <p>Following: ${user.following}</p>
+                
+                </div>
 
             </div>
 
