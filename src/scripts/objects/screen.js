@@ -61,6 +61,44 @@ const screen = {
             `
         }
 
+        let creatEventsItem = ""
+
+        user.events.forEach(evnt => creatEventsItem += `
+            
+            <li>
+            
+            <a href="${evnt.repo.html_url}" target="_blank"> ${evnt.repo.name} - Sem mensagem de commit </a>
+
+            </li>
+            
+        `)
+        
+        let pushEvents = ""
+        user.events.forEach(evnt => pushEvents += `
+            
+           <li>
+            
+            <a href="${evnt.repo.html_url}" target="_blank"> ${evnt.repo.name} - Sem mensagem de commit </a>
+
+            </li>
+            
+        `)
+
+        if (user.events.length > 0) {
+
+            this.userProfile.innerHTML += `
+            
+            <div class="repositories section">
+
+                <h2>Events</h2>
+
+                <ul> ${creatEventsItem} </ul>
+
+            </div>            
+            
+            `
+        }
+
     },
 
     renderNotFound() {

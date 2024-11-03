@@ -3,6 +3,7 @@ import { getRepositories } from "./services/repositories.js"
 
 import { user } from "./objects/user.js"
 import { screen } from "./objects/screen.js"
+import { getEvents } from "./services/events.js"
 
 //*buscando clicando no botão
 document.getElementById('btn-search').addEventListener('click', () => {
@@ -50,9 +51,11 @@ async function getUserData(userName) {
     }
 
     const repositoriesResponse = await getRepositories(userName)
+    const userEvents = await getEvents(userName)
 
     user.setInfo(userResponse)
     user.setRepositories(repositoriesResponse)
+    user.setEvents(userEvents)
 
     screen.renderUser(user)
 
