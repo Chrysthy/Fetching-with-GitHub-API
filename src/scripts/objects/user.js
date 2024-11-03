@@ -7,6 +7,7 @@ const user = {
     followers: '',
     following: '',
 
+    events: [],
     repositories: [],
 
     //*criando o método
@@ -23,6 +24,10 @@ const user = {
     setRepositories(repositories) {
 
         this.repositories = repositories
+    },
+
+    setEvents(events) {
+        this.events = events
     }
 
 }
