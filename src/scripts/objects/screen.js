@@ -88,7 +88,7 @@ const screen = {
 
             this.userProfile.innerHTML += `
             
-            <div class="repositories section">
+            <div class="events section">
 
                 <h2>Events</h2>
 
