@@ -16,6 +16,14 @@ const screen = {
 
                 <p>${user.bio ?? 'Não possui bio cadastrada 😓'}</p>
 
+                <br>
+
+                <h3>Followers</h3>
+                <p>${user.followers}</p>
+
+                <h3>Following</h3>
+                <p>${user.following}</p>
+
             </div>
 
         </div>
@@ -34,7 +42,7 @@ const screen = {
             
             `)
 
-            if (user.repositories.length > 0) {
+        if (user.repositories.length > 0) {
 
             this.userProfile.innerHTML += `
             
