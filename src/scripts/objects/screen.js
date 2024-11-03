@@ -87,7 +87,7 @@ const screen = {
             
            <li>
             
-            <a href="${evnt.repo.html_url}" target="_blank"> ${evnt.repo.name} - Sem mensagem de commit </a>
+            <a href="${evnt.repo.html_url}" target="_blank"> ${evnt.repo.name} - No commit messages </a>
 
             </li>
             
