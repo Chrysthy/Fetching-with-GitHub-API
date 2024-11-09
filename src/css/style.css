@@ -30,8 +30,9 @@ main {
   color: #FFFFFF;
 }
 
-.section{
-  padding: 70px 0;
+
+.events{
+  padding: 5px 0;
 }
 
 .container {
@@ -137,7 +138,7 @@ main {
 }
 
 .container .profile-data .events h2{
-  margin-bottom: 30px;
+  margin: 80px 0 30px 0; 
   text-align: center;
 }
 
@@ -162,7 +163,7 @@ main {
   transition: 0.3s ease-in-out;
 }
 
-.container .profile-data .events ul li a {
+.container .profile-data .events ul li{
   padding: 20px;
   border: 1px solid grey;  
   margin: 20px;
@@ -176,9 +177,10 @@ main {
   color: #fff
 }
 
-.container .profile-data .events ul li a:hover{
+.container .profile-data .events ul li:hover{
   background-color:hotpink;
-  color: #fff
+  color: #fff;
+  cursor:  text;
 }
 
 .container .profile-data.hide{
