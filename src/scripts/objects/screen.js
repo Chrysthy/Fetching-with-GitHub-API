@@ -40,16 +40,16 @@ const screen = {
             
             <li>
             
-            <a href="${repo.html_url}" target="_blank"> ${repo.name} </a>
+                <a href="${repo.html_url}" target="_blank"> ${repo.name} </a>
 
-            <div class="container">
+                <div class="container">
 
-                <p>🍴 ${repo.forks ?? 'No Forks'}</p>                   
-                <p>🌟 ${repo.stargazers_count ?? 'No Stars'}</p>
-                <p>👀 ${repo.watchers ?? 'No Watchers'}</p>
-                <p>💻 ${repo.language ?? 'No Language'}</p>
-                
-            </div>
+                    <p>🍴 ${repo.forks ?? 'No Forks'}</p>                   
+                    <p>🌟 ${repo.stargazers_count ?? 'No Stars'}</p>
+                    <p>👀 ${repo.watchers ?? 'No Watchers'}</p>
+                    <p>💻 ${repo.language ?? 'No Language'}</p>
+                    
+                </div>
             
             </li>
             
