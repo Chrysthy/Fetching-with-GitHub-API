@@ -44,9 +44,9 @@ const screen = {
 
                 <div class="container">
 
-                    <p>🍴${repo.forks_count ?? 'No Forks'}</p>                   
-                    <p>🌟${repo.stargazers_count ?? 'No Stars'}</p>
-                    <p>👀${repo.watchers_count ?? 'No Watchers'}</p>
+                    <p>🍴${repo.forks_count}</p>                   
+                    <p>🌟${repo.stargazers_count}</p>
+                    <p>👀${repo.watchers_count}</p>
                     <p>💻${repo.language ?? 'No Language'}</p>
                     
                 </div>
