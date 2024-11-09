@@ -44,10 +44,10 @@ const screen = {
 
                 <div class="container">
 
-                    <p>🍴 ${repo.forks ?? 'No Forks'}</p>                   
-                    <p>🌟 ${repo.stargazers_count ?? 'No Stars'}</p>
-                    <p>👀 ${repo.watchers ?? 'No Watchers'}</p>
-                    <p>💻 ${repo.language ?? 'No Language'}</p>
+                    <p>🍴${repo.forks_count ?? 'No Forks'}</p>                   
+                    <p>🌟${repo.stargazers_count ?? 'No Stars'}</p>
+                    <p>👀${repo.watchers_count ?? 'No Watchers'}</p>
+                    <p>💻${repo.language ?? 'No Language'}</p>
                     
                 </div>
             
@@ -70,43 +70,41 @@ const screen = {
             `
         }
 
-        let creatEventsItem = ""
+        let eventsItem = ""
 
-        user.events.forEach(evnt => creatEventsItem += `
-            
-            <li>
-            
-            <a href="${evnt.repo.html_url}" target="_blank"> ${evnt.repo.name} - Sem mensagem de commit </a>
+        user.events.forEach(element => {
 
-            </li>
-            
-        `)
+            if (element.type === 'PushEvent') {
 
-        let pushEvents = ""
-        user.events.forEach(evnt => pushEvents += `
-            
-           <li>
-            
-            <a href="${evnt.repo.html_url}" target="_blank"> ${evnt.repo.name} - No commit messages </a>
+                eventsItem += `
 
-            </li>
-            
-        `)
+                <li>
+                
+                    <h3> ${element.repo.name}</h3>
+                
+                    <p> -- ${element.payload.commits[0].message}</p>
+                      
+                </li>
 
-        if (user.events.length > 0) {
 
-            this.userProfile.innerHTML += `
-            
-            <div class="events section">
+           ` } else {
 
-                <h2>Events</h2>
 
-                <ul> ${creatEventsItem} </ul>
+                eventsItem += `
+                
+                <li>
+                
+                    <h3> ${element.repo.name}</h3>
+                
+                    <p> -- ${element.payload.ref_type}</p>
+                      
+                </li>            
+                                
+                `
+            }
 
-            </div>            
-            
-            `
-        }
+        })
+
 
     },
 
