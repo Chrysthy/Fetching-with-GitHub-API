@@ -70,40 +70,36 @@ const screen = {
             `
         }
 
-        let eventsItem = ""
+        let eventsItems = '';
 
-        user.events.forEach(element => {
+        user.events.forEach(event => {
 
-            if (element.type === 'PushEvent') {
+            if (event.type === 'PushEvent') {
 
-                eventsItem += `
-
-                <li>
+                eventsItems += `
                 
-                    <h3> ${element.repo.name}</h3>
-                
-                    <p> -- ${element.payload.commits[0].message}</p>
-                      
-                </li>`
+                <li class="container events">${event.repo.name} - ${event.payload.commits[0]?.message ?? 'No commits'}
+                </li>
 
-            } else {
+                `;
 
-                eventsItem += `
+            } else if (event.type === 'CreateEvent') {
+
+                eventsItems += `
                 
-                <li>
-                
-                    <h3> ${element.repo.name}</h3>
-                
-                    <p> -- ${element.payload.ref_type}</p>
-                      
-                </li>            
-                                
-                `
+                <li class="container events">${event.repo.name} - No commits</li>
+
+                `;
             }
 
-        })
+        });
 
-
+        if (user.events.length > 0) {
+            this.userProfile.innerHTML += `<div class="events section">
+                <h2>Events</h2>
+                <ul>${eventsItems}</ul>
+            </div>`;
+        }
     },
 
     renderNotFound() {
