@@ -77,28 +77,40 @@ const screen = {
             if (event.type === 'PushEvent') {
 
                 eventsItems += `
-                
-                <li class="container events">${event.repo.name} - ${event.payload.commits[0]?.message ?? 'No commits'}
-                </li>
 
+                <div class="events section">
+                
+                    <li>${event.repo.name} - ${event.payload.commits[0]?.message ?? 'No commits'}
+                    </li>
+
+                </div>
                 `;
 
             } else if (event.type === 'CreateEvent') {
 
                 eventsItems += `
                 
-                <li class="container events">${event.repo.name} - No commits</li>
+                   <div class="events section">
 
+                    <li>${event.repo.name} - No commits</li>
+
+                </div>
                 `;
             }
 
         });
 
         if (user.events.length > 0) {
-            this.userProfile.innerHTML += `<div class="events section">
+            this.userProfile.innerHTML += `
+            
+            <div class="events section">
+
                 <h2>Events</h2>
+
                 <ul>${eventsItems}</ul>
-            </div>`;
+
+            </div>
+            `;
         }
     },
 
