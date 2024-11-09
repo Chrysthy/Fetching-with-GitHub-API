@@ -2,9 +2,11 @@ import { baseUrl, eventsQuantity } from "../variables.js"
 
 async function getEvents(userName) {
 
-    const response = await fetch(`${baseUrl}/${userName}/events?per_page=${eventsQuantity}`)
+    const response = await fetch(`${baseUrl}/${userName}/events`);
 
-    return await response.json()
+    const events = await response.json();
+
+    return events.filter(element => element.type === "CreateEvent" || element.type === "PushEvent").sloce(0, eventsQuantity);
 
 }
 
