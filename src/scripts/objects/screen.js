@@ -84,11 +84,9 @@ const screen = {
                 
                     <p> -- ${element.payload.commits[0].message}</p>
                       
-                </li>
+                </li>`
 
-
-           ` } else {
-
+            } else {
 
                 eventsItem += `
                 
